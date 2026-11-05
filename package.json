@@ -1,21 +1,8 @@
 {
   "name": "my-web-app",
   "version": "1.0.0",
-  "scripts": {
-    "build": "echo 'No build step needed'"
-  },
+  "description": "Website to IPA Wrapper",
   "dependencies": {
-    "@capacitor/core": "^6.0.0",
-    "@capacitor/cli": "^6.0.0",
-    "@capacitor/ios": "^6.0.0"
-  },
-  "capacitor": {
-    "appId": "com.mywebapp.app",
-    "appName": "My Web App",
-    "webDir": "www",
-    "server": {
-      "url": "https://reanime.to/home",
-      "cleartext": true
-    }
+    "cordova-ios": "^7.1.1"
   }
 }
