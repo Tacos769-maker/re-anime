@@ -11,18 +11,18 @@ jobs:
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: '20'
+          node-version: '22'
 
       - name: Install Dependencies
         run: |
-          npm install
+          npm install @capacitor/core @capacitor/cli @capacitor/ios
           mkdir -p www
-          npx cap init "My Web App" "com.mywebapp.app" --web-dir=www
+          touch www/index.html
           npx cap add ios
 
-      - name: Update Capacitor Config for Live URL
+      - name: Sync Configuration
         run: |
-          npx cap sync
+          npx cap sync ios
 
       - name: Build Xcode Project (Unsigned)
         run: |
