@@ -1,0 +1,9 @@
+<?xmlinit version='1.0' encoding='utf-8'?>
+<widget id="com.mywebapp.app" version="1.0.0" xmlns="http://w3.org" xmlns:cdv="http://apache.org">
+    <name>My Web App</name>
+    <description>Website Wrapper App</description>
+    <content src="https://example.com" />
+    <preference name="AllowInlineMediaPlayback" value="true" />
+    <allow-navigation href="http://*/*" />
+    <allow-navigation href="https://*/*" />
+</widget>
