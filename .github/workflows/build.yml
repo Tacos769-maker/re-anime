@@ -18,27 +18,26 @@ jobs:
           npm install @capacitor/core @capacitor/cli @capacitor/ios
           mkdir -p www
           touch www/index.html
-          npx cap add ios
+          npx cap add ios || true
 
       - name: Sync Configuration
         run: |
           npx cap sync ios
 
-      - name: Build Xcode Project (Unsigned)
+      - name: Force Build Unsigned App
         run: |
           cd ios/App
           xcodebuild -workspace App.xcworkspace \
                      -scheme App \
                      -configuration Release \
                      -sdk iphoneos \
+                     -destination 'generic/platform=iOS' \
                      CONFIGURATION_BUILD_DIR=../../build \
                      CODE_SIGNING_ALLOWED=NO \
                      CODE_SIGNING_REQUIRED=NO \
                      CODE_SIGN_IDENTITY="" \
                      PROVISIONING_PROFILE_SPECIFIER="" \
                      ONLY_ACTIVE_ARCH=NO \
-                     GCC_TREAT_WARNINGS_AS_ERRORS=NO \
-                     SWIFT_TREAT_WARNINGS_AS_ERRORS=NO \
                      clean build
 
       - name: Package into IPA Payload
